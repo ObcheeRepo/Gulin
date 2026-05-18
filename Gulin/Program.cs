@@ -10,7 +10,7 @@ namespace Gulin
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, Feature!");
+            Console.WriteLine("Hello, World!");
         }
     }
 }
