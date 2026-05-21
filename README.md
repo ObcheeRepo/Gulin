@@ -1,4 +1,5 @@
-Вот готовый `README.md` для проекта `MyProject`:
+Автор: Гулин Илья вячеславович
+Дата создания: 18.05.2026
 
 ```markdown
 # MyProject – Git Merge в Visual Studio и командной строке
@@ -129,71 +130,6 @@ cat Program.cs
 3. Убедиться, что ветка `main` содержит коммит слияния
 
 ---
-
-## Ожидаемый результат
-
-### Граф коммитов
-
-```
-*   abc1234 (HEAD -> main) Merge feature branch into main
-|\
-| * def5678 (feature) Update greeting to Feature version
-* | ghi9012 Initial commit with Program.cs
-```
-
-### Содержимое `Program.cs` в `main`
-
-```csharp
-Console.WriteLine("Hello, Feature!");
-```
-
-### Содержимое `Program.cs` в `feature` (без изменений)
-
-```csharp
-Console.WriteLine("Hello, Feature!");
-```
-
----
-
-## Финальная проверка через Visual Studio
-
-| Действие | Ожидаемый результат |
-|----------|---------------------|
-| `Git → Manage Branches` → двойной клик на `main` | Файл `Program.cs` содержит `Hello, Feature!` |
-| `Git → Manage Branches` → двойной клик на `feature` | Файл `Program.cs` содержит `Hello, Feature!` |
-| `git log --oneline --graph` в терминале | История показывает merge-коммит |
-
-✅ Все операции выполнены **только локально**, без удалённого репозитория.
-
----
-
-## Критерии оценки и их выполнение
-
-| Критерий | Статус | Способ проверки |
-|----------|--------|-----------------|
-| Корректная инициализация репозитория | ✅ | `git init` или через VS: `Git → Создать репозиторий Git` |
-| Добавление и коммит `Program.cs` | ✅ | Коммит `Initial commit with Program.cs` в `main` |
-| Создание ветки `feature` и изменение файла | ✅ | Ветка `feature`, коммит с `Hello, Feature!` |
-| Успешное слияние | ✅ | `git merge feature` в `main` без конфликтов |
-| Проверка результата в `main` | ✅ | `Program.cs` содержит `Console.WriteLine("Hello, Feature!");` |
-
----
-
-## Полезные команды Git (шпаргалка)
-
-| Команда | Описание |
-|---------|----------|
-| `git init` | Инициализация нового репозитория |
-| `git add <файл>` | Добавление файла в staging-область |
-| `git commit -m "..."` | Фиксация изменений с сообщением |
-| `git checkout -b <ветка>` | Создание и переключение на новую ветку |
-| `git checkout <ветка>` | Переключение на существующую ветку |
-| `git merge <ветка>` | Слияние указанной ветки в текущую |
-| `git log --oneline --graph` | Просмотр истории коммитов в компактном виде |
-| `cat <файл>` | Просмотр содержимого файла |
-
----
-
 ## Примечания
 
 - **Fast-forward vs merge commit:** В данном примере слияние создаёт отдельный merge-коммит, так как используется `git merge` без флага `--ff-only`. Если бы изменения в `main` не происходили после создания `feature`, Git по умолчанию мог бы выполнить fast-forward слияние (без дополнительного коммита).
@@ -201,9 +137,3 @@ Console.WriteLine("Hello, Feature!");
 - **Конфликты:** В данном сценарии конфликтов не возникает, так как `main` не изменялся после создания ветки `feature`.
 ```
 
-Сохраните этот текст как `README.md` в корне папки `MyProject`. При необходимости закоммитьте его:
-
-```bash
-git add README.md
-git commit -m "Add README.md with project documentation"
-```
